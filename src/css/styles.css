@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(66, 66, 66);
+}
+
+header {
+    background-color: rgb(44, 43, 43);
+    color:aliceblue;
+    display:flex;
+    flex-direction:column;
+    align-items:center;    
+    justify-content:center;
+    
+
+}
