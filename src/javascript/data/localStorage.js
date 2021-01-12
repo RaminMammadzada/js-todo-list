@@ -25,6 +25,21 @@ const addNewProject = (newProject) => {
     localStorage.setItem("organization", JSON.stringify(organization));
 }
 
+const addNewTodo = (newTodo) => {
+
+    const organization = JSON.parse(localStorage.getItem("organization"))
+    const allProjects = organization["projects"]
+    allProjects.map(project => {
+        if (project.id.toString() === getCurrentProjectId()) {
+            project.todos.push(newTodo);
+            console.log(allProjects);
+        }
+    })
+
+
+    localStorage.setItem("organization", JSON.stringify(organization));
+}
+
 const getAllProjects = () => {
     return JSON.parse(localStorage.getItem("organization"))["projects"];
 }
@@ -65,5 +80,6 @@ export {
     getCurrentProject,
     getAllTodosOfCurrentProject,
     addNewProject,
+    addNewTodo,
     isLocalStorageEmpty
 }

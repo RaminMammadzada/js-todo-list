@@ -7,7 +7,7 @@ import createSampleData from "./data/createSampleData"
 import populateData from "./data/populateData"
 import populateHeader from "./components/populateHeader"
 import { isLocalStorageEmpty } from "./data/localStorage"
-import { fillViewsWithData } from "./fillViewsWithData"
+import { manipulateProjects, manipulateTodos } from "./manipulateObjects"
 
 
 renderViews()
@@ -22,5 +22,6 @@ populateHeader();
 
 
 
-fillViewsWithData()
+manipulateProjects()
+manipulateTodos()
 // app()
