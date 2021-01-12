@@ -6,15 +6,21 @@ import { renderViews } from "./views/renderViews"
 import createSampleData from "./data/createSampleData"
 import populateData from "./data/populateData"
 import populateHeader from "./components/populateHeader"
-
+import { isLocalStorageEmpty } from "./data/localStorage"
 import { fillViewsWithData } from "./fillViewsWithData"
 
+
 renderViews()
-createSampleData();
+if (isLocalStorageEmpty()) {
+    createSampleData();
+}
 populateData();
 populateHeader();
 
+// addTodoListener()
 
 
-//fillViewsWithData()
+
+
+fillViewsWithData()
 // app()

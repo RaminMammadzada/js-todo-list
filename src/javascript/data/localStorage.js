@@ -2,8 +2,27 @@ const addToLocalStorage = () => {
     localStorage.setItem('name', 'Obaseki Nosa');
 }
 
-const updateProjectsInLocalStorage = () => {
+const updateOrganizationInLocalstore = (organization) => {
+    localStorage.setItem("organization", JSON.stringify(organization));
+}
 
+const updateProjectsInLocalStorage = () => {
+    return
+}
+
+const isLocalStorageEmpty = () => {
+    // console.log(JSON.parse(localStorage.getItem("organization")))
+    if (JSON.parse(localStorage.getItem("organization")) === null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+const addNewProject = (newProject) => {
+    const organization = JSON.parse(localStorage.getItem("organization"))
+    organization["projects"].push(newProject)
+    localStorage.setItem("organization", JSON.stringify(organization));
 }
 
 const getAllProjects = () => {
@@ -28,7 +47,14 @@ const getCurrentProject = () => {
 }
 
 const getAllTodosOfCurrentProject = () => {
-    return getCurrentProject().todos;
+
+    if (getCurrentProject() === undefined) {
+        return null;
+    } else {
+        return getCurrentProject().todos;
+    }
+
+
 }
 
 export {
@@ -37,5 +63,7 @@ export {
     setCurrentProject,
     getCurrentProjectId,
     getCurrentProject,
-    getAllTodosOfCurrentProject
+    getAllTodosOfCurrentProject,
+    addNewProject,
+    isLocalStorageEmpty
 }

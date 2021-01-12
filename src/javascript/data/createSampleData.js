@@ -28,9 +28,10 @@ const createSampleData = () => {
     organization.addProject(project1)
     organization.addProject(project2)
     organization.addProject(project3)
+
+
     localStorage.setItem("organization", JSON.stringify(organization));
 
-    // console.log(organization);
 }
 
 export default createSampleData

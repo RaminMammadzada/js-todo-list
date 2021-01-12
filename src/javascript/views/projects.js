@@ -14,7 +14,6 @@ const projects = () => {
                                     <div id="project-list"></div>
                                 </div>
                             </section>`;
-
     return projectsDiv;
 }
 
