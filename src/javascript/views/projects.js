@@ -11,7 +11,7 @@ const projects = () => {
                                 </div>
                                 <!-- project list -->
                                 <div class="project-container">
-                                    <div class="project-list"></div>
+                                    <div id="project-list"></div>
                                 </div>
                             </section>`;
 

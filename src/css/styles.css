@@ -9,6 +9,23 @@ header {
     flex-direction:column;
     align-items:center;    
     justify-content:center;
-    
+}
 
+#project-list {
+    color:aliceblue
+}
+
+#todo-list {
+    color:rgb(168, 204, 236)
+}
+
+#todo-list ul {
+    list-style-type: none;
+}
+
+.todo {
+    display:flex;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid
 }

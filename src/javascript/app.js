@@ -1,6 +1,6 @@
 import Todo from './objects/todo'
 import Project from './objects/project'
-
+import sampleProjects from "./data/sampleProjects.js"
 
 
 const app = () => {
@@ -9,7 +9,6 @@ const app = () => {
     // addProjectButton.addEventListener("click", (e) => {
 
     // })
-
 
 }
 

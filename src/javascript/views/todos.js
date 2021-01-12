@@ -11,7 +11,7 @@ const todos = () => {
                                 </div>
                                 <!-- todo list -->
                                 <div class="todo-container">
-                                    <div class="todo-list"></div>
+                                    <div id="todo-list"></div>
                                 </div>
                             </section>`;
 

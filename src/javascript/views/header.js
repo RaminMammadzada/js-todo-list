@@ -6,7 +6,7 @@ const header = () => {
 
     header.innerHTML = `<header>
                             <h1> TODO APP </h1>
-                            <h3 id="current-project"> current project name will be here </h3>
+                            <h3 id="current-project-title">Current Project: <span></span> </h3>
                         </header>`;
 
     return header;
