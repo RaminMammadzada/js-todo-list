@@ -11,6 +11,8 @@ const createSampleData = () => {
     project1.addTodo(todo1)
     project1.addTodo(todo2)
     project1.addTodo(todo3)
+    organization.addProject(project1)
+    localStorage.setItem("organization", JSON.stringify(organization));
     const project2 = new Project("project 2", "description for project 2")
     const todo4 = new Todo("todo 4", "descr for todo1", "44")
     const todo5 = new Todo("todo 5", "descr for todo1", "55")
@@ -18,6 +20,8 @@ const createSampleData = () => {
     project2.addTodo(todo4)
     project2.addTodo(todo5)
     project2.addTodo(todo6)
+    organization.addProject(project2)
+    localStorage.setItem("organization", JSON.stringify(organization));
     const project3 = new Project("project 3", "description for project 3")
     const todo7 = new Todo("todo 7", "descr for todo1", "77")
     const todo8 = new Todo("todo 8", "descr for todo1", "88")
@@ -25,11 +29,7 @@ const createSampleData = () => {
     project3.addTodo(todo7)
     project3.addTodo(todo8)
     project3.addTodo(todo9)
-    organization.addProject(project1)
-    organization.addProject(project2)
     organization.addProject(project3)
-
-
     localStorage.setItem("organization", JSON.stringify(organization));
 
 }
