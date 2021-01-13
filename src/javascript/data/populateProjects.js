@@ -37,7 +37,7 @@ const populateProjects = (id) => {
 
         editButton.addEventListener("click", () => {
             modal(prjct, "project");
-            editProject(prjct.id);
+            // editProject(prjct.id);
             populateProjects(prjct.id);
         });
 

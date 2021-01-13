@@ -4,6 +4,7 @@ class Project {
         this.title = title;
         this.description = description;
         this.todos = []
+        this.latestId = 0
     }
 
     addTodo(todo) {
