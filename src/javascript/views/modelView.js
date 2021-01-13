@@ -30,6 +30,16 @@ const editForm = () => {
             <label>Description</label>
             <input class="description-input" value="">
           </div>
+          <div class="extra-input-for-todo">
+            <div>
+              <label>Deadline</label>
+              <input class="deadline-input" value="">
+            </div>
+            <div>
+              <label>Priority</label>
+              <input class="priority-input" value="">
+            </div>
+          </div>
           
           <button type="submit" class="save-changes-btn">Save</button>`;
 

@@ -82,3 +82,7 @@ header {
   text-decoration: none;
   cursor: pointer;
 }
+
+.extra-input-for-todo {
+  display: none;
+}

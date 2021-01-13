@@ -64,7 +64,7 @@ const addNewTodo = (newTodo) => {
     localStorage.setItem("organization", JSON.stringify(organization));
 }
 
-const editTodo = (todoId, title, description) => {
+const editTodo = (todoId, title, description, deadline, priority) => {
 
 
     const organization = JSON.parse(localStorage.getItem("organization"))
@@ -75,6 +75,8 @@ const editTodo = (todoId, title, description) => {
                 if (todo.id === todoId) {
                     todo.title = title;
                     todo.description = description;
+                    todo.deadline = deadline;
+                    todo.priority = priority;
                 }
             });
         }

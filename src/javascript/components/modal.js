@@ -17,10 +17,22 @@ const fillModalContent = (obj, itemType) => {
     let descriptionInput = modalContent.getElementsByClassName("description-input")[0];
     descriptionInput.setAttribute("value", obj.description);
 
+    let deadlineInput;
+    let priorityInput;
+    if (itemType === "todo") {
+        const extraInputForTodo = document.getElementsByClassName("extra-input-for-todo")[0];
+        extraInputForTodo.style.display = "block";
+
+        deadlineInput = modalContent.getElementsByClassName("deadline-input")[0];
+        deadlineInput.setAttribute("value", obj.deadline);
+        priorityInput = modalContent.getElementsByClassName("priority-input")[0];
+        priorityInput.setAttribute("value", obj.priority);
+    }
+
     let editForm = document.getElementsByClassName("edit-form")[0];
     editForm.addEventListener("submit", () => {
         if (itemType === "project") editProject(obj.id, titleInput.value, descriptionInput.value);
-        if (itemType === "todo") editTodo(obj.id, titleInput.value, descriptionInput.value);
+        if (itemType === "todo") editTodo(obj.id, titleInput.value, descriptionInput.value, deadlineInput.value, priorityInput.value);
 
         console.log("saved");
     });
@@ -47,9 +59,8 @@ const modal = (obj, itemType) => {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         myModal.style.display = "none";
-        let editForm = document.getElementsByClassName("edit-form")[0];
-        editForm.remove()
-        modelContent.appendChild(editForm());
+        let editFormView = document.getElementsByClassName("edit-form")[0];
+        editFormView.remove()
 
     }
 
@@ -57,9 +68,8 @@ const modal = (obj, itemType) => {
     window.onclick = function (event) {
         if (event.target == myModal) {
             myModal.style.display = "none";
-            let editForm = document.getElementsByClassName("edit-form")[0];
-            editForm.remove()
-            modelContent.appendChild(editForm());
+            let editFormView = document.getElementsByClassName("edit-form")[0];
+            editFormView.remove()
         }
     }
 }

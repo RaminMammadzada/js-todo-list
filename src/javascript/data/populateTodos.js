@@ -13,7 +13,7 @@ const populateTodos = () => {
     if (todos !== null) {
         todos.forEach(td => {
             let li = document.createElement("li");
-            li.innerHTML = todo(td.id, td.title, td.description)
+            li.innerHTML = todo(td.id, td.title, td.description, td.deadline, td.priority)
             todoList.appendChild(li);
 
             // li.addEventListener("click", () => {
