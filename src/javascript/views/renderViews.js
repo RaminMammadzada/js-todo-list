@@ -8,12 +8,12 @@ const renderViews = () => {
 
     body.appendChild(header());
 
-    const mainDiv = document.createElement("div");
-    mainDiv.setAttribute("class", "d-flex flex-row justify-content-around pt-3");
-    mainDiv.appendChild(projects());
-    mainDiv.appendChild(todos());
+    const main = document.createElement("main");
+    main.setAttribute("class", "d-flex flex-row justify-content-around pt-3");
+    main.appendChild(projects());
+    main.appendChild(todos());
 
-    body.appendChild(mainDiv)
+    body.appendChild(main)
 
 }
 

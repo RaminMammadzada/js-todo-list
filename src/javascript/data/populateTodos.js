@@ -12,9 +12,34 @@ const populateTodos = () => {
     if (todos !== null) {
         todos.forEach(td => {
             let li = document.createElement("li");
-            li.innerHTML = todo(td.title, td.description)
+            li.innerHTML = todo(td.id, td.title, td.description)
             todoList.appendChild(li);
-        })
+
+            // li.addEventListener("click", () => {
+            //     setCurrentProject(prjct.id)
+            //     populateHeader();
+            //     populateTodos();
+            // });
+
+            todoListView.appendChild(todoList);
+
+            // const projectTitle = document.getElementById(`project-title-${prjct.id}`);
+
+
+            const deleteButton = document.getElementById(`delete-todo-btn-${td.id}`);
+            const editButton = document.getElementById(`edit-todo-btn-${td.id}`);
+            // console.log(deleteButton);
+            deleteButton.addEventListener("click", () => {
+                deleteProject(td.id);
+                populateProjects(td.id);
+            });
+
+            // editButton.addEventListener("click", () => {
+            //     modal(prjct, "project");
+            //     // editProject(prjct.id);
+            //     populateProjects(prjct.id);
+            // });
+        });
     }
 
     todoListView.appendChild(todoList);

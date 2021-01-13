@@ -1,4 +1,4 @@
-import { getProjectsCount } from "../data/localStorage";
+import { getProjectsCount, setLatestProjectId, getLatestProjectId } from "../data/localStorage";
 
 class Project {
     constructor(title, description) {
@@ -6,6 +6,7 @@ class Project {
         this.title = title;
         this.description = description;
         this.todos = []
+
     }
 
     addTodo(todo) {
@@ -25,12 +26,17 @@ class Project {
     }
 
     static incrementId() {
-        if (getProjectsCount() === null) return 1;
-        else return getProjectsCount() + 1;
-
-        // if (!this.latestId) this.latestId = 1
-        // else this.latestId++
-        // return this.latestId
+        // if (getProjectsCount() === null) return 1;
+        // else return getProjectsCount() + 1;
+        let latestId;
+        if (!getLatestProjectId()) {
+            latestId = 1;
+        }
+        else {
+            latestId = parseInt(getLatestProjectId()) + 1;
+        }
+        setLatestProjectId(latestId);
+        return latestId;
     }
 }
 
