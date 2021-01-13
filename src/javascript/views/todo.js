@@ -5,8 +5,8 @@ const todo = (title, description) => `
         <h7 class="todo-description"> ${description}</h7>
     </div>
     <div class="todo-buttons">
-        <button>delete</button>
-        <button>edit</button>
+        <button id="delete-todo-btn">delete</button>
+        <button id="edit-todo-btn">edit</button>
     </div>
 </div>`;
 

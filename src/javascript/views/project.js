@@ -1,12 +1,12 @@
-const project = (title, description) => `
+const project = (id, title, description) => `
 <div class="project">
     <div>
-        <h5 class="project-title"> ${title} </h5>
+        <h5 class="project-title-${id}"> ${title} </h5>
         <h7 class="project-description"> ${description}</h7>
     </div>
     <div class="project-buttons">
-        <button>delete</button>
-        <button>edit</button>
+        <button id="delete-project-btn-${id}">delete</button>
+        <button id="edit-project-btn-${id}">edit</button>
     </div>
 </div>`;
 

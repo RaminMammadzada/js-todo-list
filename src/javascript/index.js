@@ -24,4 +24,5 @@ populateHeader();
 
 manipulateProjects()
 manipulateTodos()
+
 // app()

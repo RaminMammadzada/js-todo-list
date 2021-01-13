@@ -25,6 +25,35 @@ const addNewProject = (newProject) => {
     localStorage.setItem("organization", JSON.stringify(organization));
 }
 
+const editProject = (id) => {
+    console.log("edit " + id)
+    // const organization = JSON.parse(localStorage.getItem("organization"))
+    // const allProjects = organization["projects"]
+    // allProjects.map(project => {
+    //     if (project.id.toString() === getCurrentProjectId()) {
+    //         project.todos.push(newTodo);
+    //         console.log(allProjects);
+    //     }
+    // })
+    // localStorage.setItem("organization", JSON.stringify(organization));
+
+}
+
+const deleteProject = (id) => {
+    console.log("delete " + id)
+    const organization = JSON.parse(localStorage.getItem("organization"))
+    const allProjects = organization["projects"]
+    organization["projects"] = allProjects.reduce((acc, project) => {
+        if (project.id.toString() !== id.toString()) {
+            acc.push(project)
+        }
+        return acc;
+    }, [])
+    // console.log(organization["projects"]);
+    localStorage.setItem("organization", JSON.stringify(organization));
+}
+
+
 const addNewTodo = (newTodo) => {
 
     const organization = JSON.parse(localStorage.getItem("organization"))
@@ -35,10 +64,9 @@ const addNewTodo = (newTodo) => {
             console.log(allProjects);
         }
     })
-
-
     localStorage.setItem("organization", JSON.stringify(organization));
 }
+
 
 const getAllProjects = () => {
     return JSON.parse(localStorage.getItem("organization"))["projects"];
@@ -80,6 +108,8 @@ export {
     getCurrentProject,
     getAllTodosOfCurrentProject,
     addNewProject,
+    editProject,
+    deleteProject,
     addNewTodo,
     isLocalStorageEmpty
 }

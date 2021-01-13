@@ -1,8 +1,10 @@
-import { setCurrentProject, getAllProjects } from "../data/localStorage"
+import { setCurrentProject, getAllProjects, deleteProject, editProject, getCurrentProjectId } from "../data/localStorage"
 import populateHeader from "../components/populateHeader"
 import populateTodos from "../data/populateTodos"
 import project from "../views/project"
-const populateProjects = () => {
+import modal from "../components/modal"
+
+const populateProjects = (id) => {
     const projectListView = document.getElementById("project-list");
     const projectList = document.createElement("ul");
     projectListView.innerHTML = "";
@@ -10,7 +12,7 @@ const populateProjects = () => {
 
     projects.forEach(prjct => {
         let li = document.createElement("li");
-        li.innerHTML = project(prjct.title, prjct.description)
+        li.innerHTML = project(prjct.id, prjct.title, prjct.description);
         // console.log(project);
         projectList.appendChild(li);
 
@@ -19,9 +21,29 @@ const populateProjects = () => {
             populateHeader();
             populateTodos();
         });
-    })
 
-    projectListView.appendChild(projectList);
+        projectListView.appendChild(projectList);
+
+        // const projectTitle = document.getElementById(`project-title-${prjct.id}`);
+
+
+        const deleteButton = document.getElementById(`delete-project-btn-${prjct.id}`);
+        const editButton = document.getElementById(`edit-project-btn-${prjct.id}`);
+        // console.log(deleteButton);
+        deleteButton.addEventListener("click", () => {
+            deleteProject(prjct.id);
+            populateProjects(prjct.id);
+        });
+
+        editButton.addEventListener("click", () => {
+            modal(prjct, "project");
+            editProject(prjct.id);
+            populateProjects(prjct.id);
+        });
+
+
+
+    })
 
 }
 
