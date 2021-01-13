@@ -1,12 +1,12 @@
 class Organization {
-    constructor(title) {
-        this.title = title;
-        this.projects = []
-    }
+  constructor(title) {
+    this.title = title;
+    this.projects = [];
+  }
 
-    addProject(project) {
-        this.projects.push(project);
-    }
+  addProject(project) {
+    this.projects.push(project);
+  }
 }
 
-export default Organization
+export default Organization;

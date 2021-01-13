@@ -15,7 +15,6 @@ header {
 
 #project-list {
   color: rgb(168, 204, 236);
-  /* font-size: 2rem; */
   margin: 20px;
   border: 1px solid;
 }
@@ -31,7 +30,7 @@ header {
 }
 
 #project-list ul li:last-child {
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 
 .project-title:hover {
@@ -92,7 +91,7 @@ header {
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;

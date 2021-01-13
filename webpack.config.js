@@ -1,6 +1,6 @@
 // Webpack uses this to work with directories
 const path = require('path');
-const htmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // This is the main configuration object.
@@ -14,12 +14,12 @@ module.exports = {
   // Webpack will bundle all JavaScript into this file
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: './bundle.js'
+    filename: './bundle.js',
   },
   plugins: [
-    new htmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       hash: false,
-      filename: './index.html'
+      filename: './index.html',
     }),
     // new MiniCssExtractPlugin()
   ],
@@ -38,12 +38,12 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          // { 
+          // {
           //   loader: MiniCssExtractPlugin.loader,
           //   options: {
           //     publicPath: ''
           // },
-          //  }, 
+          //  },
           { loader: 'style-loader' },
           { loader: 'css-loader' }],
       },
@@ -53,15 +53,15 @@ module.exports = {
         use: [
           {
             // Using file-loader for these files
-            loader: "file-loader",
+            loader: 'file-loader',
 
             // In options we can set different things like format
             // and directory to save
             options: {
-              outputPath: 'images'
-            }
-          }
-        ]
+              outputPath: 'images',
+            },
+          },
+        ],
       },
       {
         // Apply rule for fonts files
@@ -69,24 +69,24 @@ module.exports = {
         use: [
           {
             // Using file-loader too
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              outputPath: 'fonts'
-            }
-          }
-        ]
-      }
+              outputPath: 'fonts',
+            },
+          },
+        ],
+      },
     ],
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 8083
+    port: 8083,
   },
 
   // Default mode for Webpack is production.
   // Depending on mode Webpack will apply different things
-  // on final bundle. For now we don't need production's JavaScript 
+  // on final bundle. For now we don't need production's JavaScript
   // minifying and other thing so let's set mode to development
-  mode: 'development'
+  mode: 'development',
 };

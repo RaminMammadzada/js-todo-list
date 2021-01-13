@@ -1,5 +1,5 @@
 const modalView = () => {
-  const div = document.createElement("div");
+  const div = document.createElement('div');
 
   div.innerHTML = `
   <div id="myModal" class="modal">
@@ -14,12 +14,12 @@ const modalView = () => {
   </div>`;
 
   return div;
-}
+};
 
 const editForm = () => {
-  const form = document.createElement("form");
-  form.setAttribute("class", "edit-form");
-  form.setAttribute("enctype", "multipart/form-data");
+  const form = document.createElement('form');
+  form.setAttribute('class', 'edit-form');
+  form.setAttribute('enctype', 'multipart/form-data');
   form.innerHTML = `
           <div>
             <label>Title</label>
@@ -52,6 +52,6 @@ const editForm = () => {
           <button type="submit" class="save-changes-btn">Save</button>`;
 
   return form;
-}
+};
 
-export { modalView, editForm }
+export { modalView, editForm };

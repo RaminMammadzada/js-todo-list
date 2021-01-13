@@ -1,9 +1,9 @@
-import populateProjects from "./populateProjects"
-import populateTodos from "./populateTodos"
+import populateProjects from './populateProjects';
+import populateTodos from './populateTodos';
 
 const populateData = () => {
-    populateProjects()
-    populateTodos()
-}
+  populateProjects();
+  populateTodos();
+};
 
-export default populateData
+export default populateData;

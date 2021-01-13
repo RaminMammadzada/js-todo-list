@@ -16,6 +16,8 @@ restaurant website using JS6 and finished the following milestones:
 - [x] Milestone 4 - Add view files and logic for populating todos.
 - [x] Milestone 5 - Add CRUD methods to save to `localStorage`, update, delete and edit objects in `localStorage` . I use factory functions to handle them.
 - [x] Milestone 6 - Update UI.
+- [x] Milestone 6 - Update readme file.
+- [x] Milestone 6 - Update code to obey linter rules.
 
 ## Built With
 
