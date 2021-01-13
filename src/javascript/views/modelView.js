@@ -33,7 +33,11 @@ const editForm = () => {
           <div class="extra-input-for-todo">
             <div>
               <label>Deadline</label>
-              <input class="deadline-input" value="">
+
+              <input class="deadline-input" type="date" id="start" name="deadline"
+              value="2021-01-13"
+              min="2021-01-12" max="2021-12-31">
+
             </div>
             <div>
             <label for="priority">Priority:</label>
