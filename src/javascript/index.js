@@ -8,7 +8,9 @@ import populateData from "./data/populateData"
 import populateHeader from "./components/populateHeader"
 import { isLocalStorageEmpty } from "./data/localStorage"
 import { manipulateProjects, manipulateTodos } from "./manipulateObjects"
+import { setCurrentProjectId } from "./data/localStorage";
 
+setCurrentProjectId(1);
 
 renderViews()
 if (isLocalStorageEmpty()) {

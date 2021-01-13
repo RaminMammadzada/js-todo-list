@@ -25,7 +25,7 @@ header {
   list-style-type: none;
 }
 
-#project-list ul li:hover {
+.project-title:hover {
   color: rgb(143, 145, 146);
   cursor: pointer;
 }
@@ -36,6 +36,11 @@ header {
 
 #todo-list ul {
   list-style-type: none;
+}
+
+.todo-title:hover {
+  color: rgb(143, 145, 146);
+  cursor: pointer;
 }
 
 .todo {

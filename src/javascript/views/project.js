@@ -1,8 +1,10 @@
 const project = (id, title, description) => `
 <div class="project">
     <div>
-        <h5 class="project-title"> ${title} </h5>
-        <h7 class="project-description"> ${description}</h7>
+        <div class="project-title">
+            <h3 class="project-title-${id}"> ${title} </h3>
+        </div>
+        <p class="project-description"> ${description}</p>
     </div>
     <div class="project-buttons">
         <button id="delete-project-btn-${id}">delete</button>

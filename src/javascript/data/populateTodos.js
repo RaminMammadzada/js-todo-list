@@ -1,4 +1,4 @@
-import { getAllTodosOfCurrentProject, deleteTodo } from "../data/localStorage"
+import { getAllTodosOfCurrentProject, deleteTodo, editTodoDone } from "../data/localStorage"
 import todo from "../views/todo"
 import modal from "../components/modal"
 
@@ -13,16 +13,29 @@ const populateTodos = () => {
     if (todos !== null) {
         todos.forEach(td => {
             let li = document.createElement("li");
-            li.innerHTML = todo(td.id, td.title, td.description, td.deadline, td.priority)
+            li.innerHTML = todo(td.id, td.title, td.description, td.deadline, td.priority, td.done)
             todoList.appendChild(li);
 
-            // li.addEventListener("click", () => {
-            //     setCurrentProject(prjct.id)
-            //     populateHeader();
-            //     populateTodos();
-            // });
-
             todoListView.appendChild(todoList);
+
+            const todoTitle = document.getElementsByClassName(`todo-title-${td.id}`)[0];
+
+            if (td.done === true) {
+                todoTitle.style.color = "#ffffff";
+                todoTitle.style.textDecoration = "line-through";
+            }
+            else {
+                todoTitle.style.color = "#a8ccec";
+                todoTitle.style.textDecoration = "none";
+            }
+
+            todoTitle.addEventListener("click", () => {
+                td.done = !td.done;
+                editTodoDone(td.id, td.done);
+                populateTodos();
+            });
+
+
 
             // const projectTitle = document.getElementById(`project-title-${prjct.id}`);
 

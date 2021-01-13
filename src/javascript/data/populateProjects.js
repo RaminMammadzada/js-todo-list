@@ -1,4 +1,4 @@
-import { setCurrentProject, getAllProjects, deleteProject, editProject, getCurrentProjectId } from "../data/localStorage"
+import { setCurrentProjectId, getAllProjects, deleteProject, editProject, getCurrentProjectId } from "../data/localStorage"
 import populateHeader from "../components/populateHeader"
 import populateTodos from "../data/populateTodos"
 import project from "../views/project"
@@ -16,13 +16,14 @@ const populateProjects = () => {
         // console.log(project);
         projectList.appendChild(li);
 
-        li.addEventListener("click", () => {
-            setCurrentProject(prjct.id)
+        projectListView.appendChild(projectList);
+
+        const projectTitle = document.getElementsByClassName(`project-title-${prjct.id}`)[0];
+        projectTitle.addEventListener("click", () => {
+            setCurrentProjectId(prjct.id)
             populateHeader();
             populateTodos();
         });
-
-        projectListView.appendChild(projectList);
 
         // const projectTitle = document.getElementById(`project-title-${prjct.id}`);
 

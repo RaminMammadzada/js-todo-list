@@ -77,6 +77,22 @@ const editTodo = (todoId, title, description, deadline, priority) => {
                     todo.description = description;
                     todo.deadline = deadline;
                     todo.priority = priority;
+                    todo.done = false;
+                }
+            });
+        }
+    })
+    localStorage.setItem("organization", JSON.stringify(organization));
+}
+
+const editTodoDone = (todoId, isItDone) => {
+    const organization = JSON.parse(localStorage.getItem("organization"))
+    const allProjects = organization["projects"]
+    allProjects.map(project => {
+        if (project.id.toString() === getCurrentProjectId()) {
+            project.todos.map(todo => {
+                if (todo.id === todoId) {
+                    todo.done = isItDone;
                 }
             });
         }
@@ -112,7 +128,7 @@ const getProjectsCount = () => {
     else return getAllProjects().length;
 }
 
-const setCurrentProject = (id) => {
+const setCurrentProjectId = (id) => {
     localStorage.setItem("currentProjectId", id);
 }
 
@@ -158,7 +174,7 @@ const getLatestTodoId = () => {
 export {
     addToLocalStorage,
     getAllProjects,
-    setCurrentProject,
+    setCurrentProjectId,
     getCurrentProjectId,
     getCurrentProject,
     getAllTodosOfCurrentProject,
@@ -173,5 +189,6 @@ export {
     setLatestProjectId,
     getLatestProjectId,
     setLatestTodoId,
-    getLatestTodoId
+    getLatestTodoId,
+    editTodoDone
 }

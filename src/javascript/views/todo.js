@@ -1,7 +1,9 @@
-const todo = (id, title, description, deadline, priority) => `
+const todo = (id, title, description, deadline, priority, done) => `
 <div class="todo">
     <div>
-        <h5 class="todo-title"> ${title} </h5>
+        <div class="todo-title">
+            <h5 class="todo-title-${id}"> ${title} </h5>
+        </div>
         <h7 class="todo-description"> ${description}</h7>
     </div>
     <div class="mx-5">
