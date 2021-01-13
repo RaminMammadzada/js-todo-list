@@ -7,7 +7,7 @@ const todos = () => {
     todoDiv.innerHTML = `<section>
                                 <div class="d-flex justify-content-center">
                                     <input type="text" id="add-todo" placeholder="todo name" />
-                                    <button type="submit" class="add-todo-btn">add todo</button>
+                                    <button type="submit" class="add-todo-btn"><i class="far fa-plus-square"></i> add todo</button>
                                 </div>
                                 <!-- todo list -->
                                 <div class="todo-container">

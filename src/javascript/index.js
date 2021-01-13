@@ -10,6 +10,11 @@ import { isLocalStorageEmpty } from "./data/localStorage"
 import { manipulateProjects, manipulateTodos } from "./manipulateObjects"
 import { setCurrentProjectId } from "./data/localStorage";
 
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/brands'
+
 setCurrentProjectId(1);
 
 renderViews()
