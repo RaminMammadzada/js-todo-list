@@ -37,12 +37,12 @@ const editProject = (projectId, title, description) => {
     localStorage.setItem("organization", JSON.stringify(organization));
 }
 
-const deleteProject = (id) => {
-    console.log("delete " + id)
+const deleteProject = (projectId) => {
+    console.log("delete " + projectId)
     const organization = JSON.parse(localStorage.getItem("organization"))
     const allProjects = organization["projects"]
     organization["projects"] = allProjects.reduce((acc, project) => {
-        if (project.id.toString() !== id.toString()) {
+        if (project.id.toString() !== projectId.toString()) {
             acc.push(project)
         }
         return acc;
@@ -65,28 +65,23 @@ const addNewTodo = (newTodo) => {
 }
 
 const editTodo = (todoId, title, description) => {
+    
+}
+
+const deleteTodo = (todoId) => {
+    console.log("delete " + todoId)
     const organization = JSON.parse(localStorage.getItem("organization"))
     const allProjects = organization["projects"]
     allProjects.map(project => {
-        if (project.id.toString() === projectId.toString()) {
-            project.title = title;
-            project.description = description;
+        if (project.id.toString() === getCurrentProjectId()) {
+            project.todos = project.todos.reduce((acc, todo) => {
+                if (todo.id.toString() !== todoId.toString()) {
+                    acc.push(todo)
+                }
+                return acc;
+            }, []);
         }
     })
-    localStorage.setItem("organization", JSON.stringify(organization));
-}
-
-const deleteTodo = (id) => {
-    console.log("delete " + id)
-    const organization = JSON.parse(localStorage.getItem("organization"))
-    const allProjects = organization["projects"]
-    organization["projects"] = allProjects.reduce((acc, project) => {
-        if (project.id.toString() !== id.toString()) {
-            acc.push(project)
-        }
-        return acc;
-    }, [])
-    // console.log(organization["projects"]);
     localStorage.setItem("organization", JSON.stringify(organization));
 }
 

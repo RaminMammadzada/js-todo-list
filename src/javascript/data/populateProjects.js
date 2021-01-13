@@ -4,7 +4,7 @@ import populateTodos from "../data/populateTodos"
 import project from "../views/project"
 import modal from "../components/modal"
 
-const populateProjects = (id) => {
+const populateProjects = () => {
     const projectListView = document.getElementById("project-list");
     const projectList = document.createElement("ul");
     projectListView.innerHTML = "";
@@ -32,7 +32,7 @@ const populateProjects = (id) => {
         // console.log(deleteButton);
         deleteButton.addEventListener("click", () => {
             deleteProject(prjct.id);
-            populateProjects(prjct.id);
+            populateProjects();
         });
 
         editButton.addEventListener("click", () => {

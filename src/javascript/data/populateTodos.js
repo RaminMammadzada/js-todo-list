@@ -1,4 +1,4 @@
-import { getAllTodosOfCurrentProject } from "../data/localStorage"
+import { getAllTodosOfCurrentProject, deleteTodo } from "../data/localStorage"
 import todo from "../views/todo"
 
 const populateTodos = () => {
@@ -30,14 +30,14 @@ const populateTodos = () => {
             const editButton = document.getElementById(`edit-todo-btn-${td.id}`);
             // console.log(deleteButton);
             deleteButton.addEventListener("click", () => {
-                deleteProject(td.id);
-                populateProjects(td.id);
+                deleteTodo(td.id);
+                populateTodos(td.id);
             });
 
             // editButton.addEventListener("click", () => {
             //     modal(prjct, "project");
-            //     // editProject(prjct.id);
-            //     populateProjects(prjct.id);
+            //     // editTodo(prjct.id);
+            //     populateTodos(prjct.id);
             // });
         });
     }
