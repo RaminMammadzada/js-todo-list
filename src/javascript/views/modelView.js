@@ -1,4 +1,4 @@
-const modal = () => {
+const modalView = () => {
   const div = document.createElement("div");
 
   div.innerHTML = `
@@ -9,7 +9,19 @@ const modal = () => {
       <span class="close">&times;</span>
       <h3 class="form-title">Form Title</h3>
       <p class="guidance"></p>
-      <form class="edit-form" enctype="multipart/form-data">
+    </div>  
+  
+  </div>`;
+
+  return div;
+}
+
+
+const editForm = () => {
+  const form = document.createElement("form");
+  form.setAttribute("class", "edit-form");
+  form.setAttribute("enctype", "multipart/form-data");
+  form.innerHTML = `
           <div>
             <label>Title</label>
             <input class="title-input" value="">
@@ -19,14 +31,9 @@ const modal = () => {
             <input class="description-input" value="">
           </div>
           
-          <button type="submit" class="save-changes-btn">Save</button>
-      </form>
-    </div>  
-  
-  </div>`;
+          <button type="submit" class="save-changes-btn">Save</button>`;
 
-  return div;
+  return form;
 }
 
-
-export default modal;
+export { modalView, editForm }

@@ -1,5 +1,6 @@
-import modelView from "../views/modelView";
+import { modalView, editForm } from "../views/modelView";
 import { editProject, editTodo } from "../data/localStorage"
+import populateTodos from "../data/populateTodos";
 
 const fillModalContent = (obj, itemType) => {
     // Modal content
@@ -23,13 +24,14 @@ const fillModalContent = (obj, itemType) => {
 
         console.log("saved");
     });
-
-
 }
 
 const modal = (obj, itemType) => {
     const body = document.getElementsByTagName("body")[0];
-    body.appendChild(modelView())
+    body.appendChild(modalView());
+
+    const modelContent = document.getElementsByClassName("modal-content")[0];
+    modelContent.appendChild(editForm());
 
     // Get the modal
     var myModal = document.getElementById("myModal");
@@ -37,7 +39,7 @@ const modal = (obj, itemType) => {
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal 
+    // When the user clicks the button, open the modal
     myModal.style.display = "block";
 
     fillModalContent(obj, itemType);
@@ -45,12 +47,19 @@ const modal = (obj, itemType) => {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         myModal.style.display = "none";
+        let editForm = document.getElementsByClassName("edit-form")[0];
+        editForm.remove()
+        modelContent.appendChild(editForm());
+
     }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == myModal) {
             myModal.style.display = "none";
+            let editForm = document.getElementsByClassName("edit-form")[0];
+            editForm.remove()
+            modelContent.appendChild(editForm());
         }
     }
 }
