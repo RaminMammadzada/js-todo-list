@@ -19,6 +19,10 @@ const populateTodos = () => {
             todoListView.appendChild(todoList);
 
             const todoTitle = document.getElementsByClassName(`todo-title-${td.id}`)[0];
+            const todoPriority = document.getElementsByClassName(`todo-priority-${td.id}`)[0];
+            if (td.priority === "High") todoPriority.style.color = "#ff0000"
+            else if (td.priority === "Low") todoPriority.style.color = "#00ff00"
+            else todoPriority.style.color = "#2d75e0"
 
             if (td.done === true) {
                 todoTitle.style.color = "#ffffff";

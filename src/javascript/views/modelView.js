@@ -36,8 +36,13 @@ const editForm = () => {
               <input class="deadline-input" value="">
             </div>
             <div>
-              <label>Priority</label>
-              <input class="priority-input" value="">
+            <label for="priority">Priority:</label>
+
+            <select class="priority-input" id="priority">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
             </div>
           </div>
           

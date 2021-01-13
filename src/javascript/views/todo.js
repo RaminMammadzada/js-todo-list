@@ -8,7 +8,7 @@ const todo = (id, title, description, deadline, priority, done) => `
     </div>
     <div class="mx-5">
         <h5 class="todo-deadline"> ${deadline} </h5>
-        <h7 class="todo-priority"> ${priority}</h7>
+        <h7 class="todo-priority-${id}"> ${priority}</h7>
     </div>
     <div class="todo-buttons">
         <button id="delete-todo-btn-${id}">delete</button>

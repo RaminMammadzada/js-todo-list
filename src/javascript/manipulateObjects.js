@@ -22,7 +22,7 @@ const manipulateTodos = () => {
     const newTodoInput = document.getElementById("add-todo");
     const addTodoButton = document.getElementsByClassName("add-todo-btn")[0];
     addTodoButton.addEventListener("click", (e) => {
-        const newTodo = new Todo(newTodoInput.value, "todo description", "2021");
+        const newTodo = new Todo(newTodoInput.value, "todo description", "Janyary 2021", "High");
         addNewTodo(newTodo);
         populateTodos();
         newTodoInput.value = "";

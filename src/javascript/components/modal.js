@@ -26,11 +26,11 @@ const fillModalContent = (obj, itemType) => {
         deadlineInput = modalContent.getElementsByClassName("deadline-input")[0];
         deadlineInput.setAttribute("value", obj.deadline);
         priorityInput = modalContent.getElementsByClassName("priority-input")[0];
-        priorityInput.setAttribute("value", obj.priority);
+        priorityInput.value = obj.priority;
     }
 
-    let editForm = document.getElementsByClassName("edit-form")[0];
-    editForm.addEventListener("submit", () => {
+    let editFormView = document.getElementsByClassName("edit-form")[0];
+    editFormView.addEventListener("submit", () => {
         if (itemType === "project") editProject(obj.id, titleInput.value, descriptionInput.value);
         if (itemType === "todo") editTodo(obj.id, titleInput.value, descriptionInput.value, deadlineInput.value, priorityInput.value);
 
