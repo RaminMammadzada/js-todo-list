@@ -1,5 +1,5 @@
 import modelView from "../views/modelView";
-import { editProject } from "../data/localStorage"
+import { editProject, editTodo } from "../data/localStorage"
 
 const fillModalContent = (obj, itemType) => {
     // Modal content
@@ -18,8 +18,9 @@ const fillModalContent = (obj, itemType) => {
 
     let editForm = document.getElementsByClassName("edit-form")[0];
     editForm.addEventListener("submit", () => {
-        editProject(obj.id, titleInput.value, descriptionInput.value);
-        
+        if (itemType === "project") editProject(obj.id, titleInput.value, descriptionInput.value);
+        if (itemType === "todo") editTodo(obj.id, titleInput.value, descriptionInput.value);
+
         console.log("saved");
     });
 

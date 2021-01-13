@@ -65,7 +65,21 @@ const addNewTodo = (newTodo) => {
 }
 
 const editTodo = (todoId, title, description) => {
-    
+
+
+    const organization = JSON.parse(localStorage.getItem("organization"))
+    const allProjects = organization["projects"]
+    allProjects.map(project => {
+        if (project.id.toString() === getCurrentProjectId()) {
+            project.todos.map(todo => {
+                if (todo.id === todoId) {
+                    todo.title = title;
+                    todo.description = description;
+                }
+            });
+        }
+    })
+    localStorage.setItem("organization", JSON.stringify(organization));
 }
 
 const deleteTodo = (todoId) => {

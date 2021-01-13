@@ -1,5 +1,6 @@
 import { getAllTodosOfCurrentProject, deleteTodo } from "../data/localStorage"
 import todo from "../views/todo"
+import modal from "../components/modal"
 
 const populateTodos = () => {
     const todoListView = document.getElementById("todo-list");
@@ -31,14 +32,14 @@ const populateTodos = () => {
             // console.log(deleteButton);
             deleteButton.addEventListener("click", () => {
                 deleteTodo(td.id);
-                populateTodos(td.id);
+                populateTodos();
             });
 
-            // editButton.addEventListener("click", () => {
-            //     modal(prjct, "project");
-            //     // editTodo(prjct.id);
-            //     populateTodos(prjct.id);
-            // });
+            editButton.addEventListener("click", () => {
+                modal(td, "todo");
+                // editTodo(prjct.id);
+                populateTodos();
+            });
         });
     }
 
