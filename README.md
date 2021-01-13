@@ -22,22 +22,28 @@ restaurant website using JS6 and finished the following milestones:
 - Javascript/ES6
 - npm v14.13.1
 - Webpack 5.11.0
+  - [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)
+  - [style-loader](https://webpack.js.org/loaders/style-loader/#root)
+  - [css-loader](https://webpack.js.org/loaders/css-loader/#root)
+  - [file-loader](https://webpack.js.org/loaders/file-loader/#root)
+  - [DevServer](https://webpack.js.org/configuration/dev-server/)
 - HTML5/CSS
 - Github Actions
 - Bootstrap v4.5
 
 ## Live Demo
 
-[Live Demo Link](https://raminmammadzada.github.io/js-restaurant-page/)
+[Live Demo Link](https://raminmammadzada.github.io/js-todo-list/)
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-- Clone the repository by runing `git clone https://github.com/RaminMammadzada/js-restaurant-page.git` on your terminal
-- Go into project folder `cd js-restaurant-page`
+- Clone the repository by runing `git clone git@github.com:RaminMammadzada/js-todo-list.git` on your terminal
+- Go into project folder `cd js-todo-list`
 - Run `npm install`
-- Run `npm run watch`
+- Run `npm run build`, if you want to create built files.
+  - Alternatively, run `npm run dev`, if you will work on it to improve.
 - Go into `dist` folder by writing `cd dist` and open `index.html` file using your favorite browser.
 
 ## Authors
