@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap";
 import '../css/styles.css';
-import { app } from './app';
 import { renderViews } from "./views/renderViews"
 import createSampleData from "./data/createSampleData"
 import populateData from "./data/populateData"
@@ -24,12 +23,5 @@ if (isLocalStorageEmpty()) {
 populateData();
 populateHeader();
 
-// addTodoListener()
-
-
-
-
 manipulateProjects()
 manipulateTodos()
-
-// app()

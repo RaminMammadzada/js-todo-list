@@ -13,7 +13,7 @@ const populateProjects = () => {
     projects.forEach(prjct => {
         let li = document.createElement("li");
         li.innerHTML = project(prjct.id, prjct.title, prjct.description);
-        // console.log(project);
+
         projectList.appendChild(li);
 
         projectListView.appendChild(projectList);
@@ -25,12 +25,8 @@ const populateProjects = () => {
             populateTodos();
         });
 
-        // const projectTitle = document.getElementById(`project-title-${prjct.id}`);
-
-
         const deleteButton = document.getElementById(`delete-project-btn-${prjct.id}`);
         const editButton = document.getElementById(`edit-project-btn-${prjct.id}`);
-        // console.log(deleteButton);
         deleteButton.addEventListener("click", () => {
             deleteProject(prjct.id);
             populateProjects();
@@ -38,7 +34,6 @@ const populateProjects = () => {
 
         editButton.addEventListener("click", () => {
             modal(prjct, "project");
-            // editProject(prjct.id);
             populateProjects(prjct.id);
         });
 

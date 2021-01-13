@@ -16,7 +16,6 @@ const modalView = () => {
   return div;
 }
 
-
 const editForm = () => {
   const form = document.createElement("form");
   form.setAttribute("class", "edit-form");

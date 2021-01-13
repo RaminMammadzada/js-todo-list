@@ -1,9 +1,5 @@
-
-
 const projects = () => {
-
     const projectsDiv = document.createElement("div");
-
     projectsDiv.innerHTML = `<section>
                                 <div class="d-flex justify-content-center">
                                     <input type="text" id="add-project" placeholder="project name" />

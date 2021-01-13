@@ -2,14 +2,6 @@ const addToLocalStorage = () => {
     localStorage.setItem('name', 'Obaseki Nosa');
 }
 
-const updateOrganizationInLocalstore = (organization) => {
-    localStorage.setItem("organization", JSON.stringify(organization));
-}
-
-const updateProjectsInLocalStorage = () => {
-    return
-}
-
 const isLocalStorageEmpty = () => {
     // console.log(JSON.parse(localStorage.getItem("organization")))
     if (JSON.parse(localStorage.getItem("organization")) === null) {

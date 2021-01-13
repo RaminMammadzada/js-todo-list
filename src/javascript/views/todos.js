@@ -1,9 +1,5 @@
-
-
 const todos = () => {
-
     const todoDiv = document.createElement("div");
-
     todoDiv.innerHTML = `<section>
                                 <div class="d-flex justify-content-center">
                                     <input type="text" id="add-todo" placeholder="todo name" />

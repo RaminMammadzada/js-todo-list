@@ -2,7 +2,6 @@ import header from './header'
 import projects from './projects'
 import todos from './todos'
 
-
 const renderViews = () => {
     const body = document.getElementsByTagName("body")[0];
 

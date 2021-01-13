@@ -13,21 +13,7 @@ class Project {
         this.todos.push(todo);
     }
 
-    removeTodo(todo) {
-        // TO DO
-    }
-
-    updateTitle(title) {
-        this.title = title;
-    }
-
-    updateDescription(description) {
-        this.description = description;
-    }
-
     static incrementId() {
-        // if (getProjectsCount() === null) return 1;
-        // else return getProjectsCount() + 1;
         let latestId;
         if (!getLatestProjectId()) {
             latestId = 1;

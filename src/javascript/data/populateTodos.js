@@ -39,14 +39,9 @@ const populateTodos = () => {
                 populateTodos();
             });
 
-
-
-            // const projectTitle = document.getElementById(`project-title-${prjct.id}`);
-
-
             const deleteButton = document.getElementById(`delete-todo-btn-${td.id}`);
             const editButton = document.getElementById(`edit-todo-btn-${td.id}`);
-            // console.log(deleteButton);
+
             deleteButton.addEventListener("click", () => {
                 deleteTodo(td.id);
                 populateTodos();
@@ -54,7 +49,7 @@ const populateTodos = () => {
 
             editButton.addEventListener("click", () => {
                 modal(td, "todo");
-                // editTodo(prjct.id);
+
                 populateTodos();
             });
         });
