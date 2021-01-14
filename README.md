@@ -6,9 +6,9 @@ Microverse JS Project #3
 
 ![screenshot](./docs/images/screenshot.png)
 
-In the project I created a simple todo app with the by following the [requirements in Odin page](https://www.theodinproject.com/courses/javascript/lessons/todo-list).
+In the project I created a simple todo app by following the [requirements in Odin page](https://www.theodinproject.com/courses/javascript/lessons/todo-list).
 
-restaurant website using JS6 and finished the following milestones:
+The page is composoed of valinna JS (JS6) and the following milestones are finished:
 
 - [x] Miltestone 1 - Setup webpack to load style files, pictures and bootstrap classes.
 - [x] Miltestone 2 - Create Todo, Project and Organization objects that will be created dynamically. Expand objects with several attributes.
