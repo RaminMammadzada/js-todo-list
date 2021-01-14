@@ -32,6 +32,8 @@ The page is made with valinna JS (JS6) and the following milestones are finished
 - HTML5/CSS
 - Github Actions
 - Bootstrap v4.5
+- ESLint
+- Stylelint
 
 ## Live Demo
 
