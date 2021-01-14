@@ -1,10 +1,6 @@
-
-
 const todos = () => {
-
-    const todoDiv = document.createElement("div");
-
-    todoDiv.innerHTML = `<section>
+  const todoDiv = document.createElement('div');
+  todoDiv.innerHTML = `<section>
                                 <div class="d-flex justify-content-center">
                                     <input type="text" id="add-todo" placeholder="todo name" />
                                     <button type="submit" class="add-todo-btn"><i class="far fa-plus-square"></i> add todo</button>
@@ -15,7 +11,7 @@ const todos = () => {
                                 </div>
                             </section>`;
 
-    return todoDiv;
-}
+  return todoDiv;
+};
 
-export default todos
+export default todos;

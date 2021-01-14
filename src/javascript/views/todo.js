@@ -1,4 +1,4 @@
-const todo = (id, title, description, deadline, priority, done) => `
+const todo = (id, title, description, deadline, priority) => `
 <div class="todo d-flex">
     <div>
         <div class="d-flex justify-content-between align-items-center ">
