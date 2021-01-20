@@ -34,6 +34,7 @@ The page is made with valinna JS (JS6) and the following milestones are finished
 - Bootstrap v4.5
 - ESLint
 - Stylelint
+- Unit tests with [JEST](https://jestjs.io)
 
 ## Live Demo
 
@@ -49,6 +50,11 @@ To get a local copy up and running follow these simple example steps.
 - Run `npm run build`, if you want to create built files.
   - Alternatively, run `npm run dev`, if you will work on it to improve.
 - Go into `dist` folder by writing `cd dist` and open `index.html` file using your favorite browser.
+
+## Testing
+- Unit tests are done by using [JEST](https://jestjs.io) testing framework.
+- Go to the root directory and type:
+  - npm run `npm run test-watch` or `npm test`
 
 ## Authors
 
