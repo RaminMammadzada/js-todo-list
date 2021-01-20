@@ -16,7 +16,7 @@ describe('Populate Header', () => {
   const headerView = document.getElementsByTagName('header')[0];
   const titleInHeader = headerView.getElementsByTagName('span')[0];
 
-  it('should create Project object for the first time with id value 1', () => {
+  it('should populate current project title to header', () => {
     expect(titleInHeader.innerText).toEqual(getCurrentProject().title);
   });
 });
