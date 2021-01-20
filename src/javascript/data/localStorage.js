@@ -1,7 +1,6 @@
 import Organization from '../objects/organization';
 
 const isLocalStorageEmpty = () => {
-  // console.log(JSON.parse(localStorage.getItem("organization")))
   if (JSON.parse(localStorage.getItem('organization')) === null) {
     return true;
   }
