@@ -2,7 +2,7 @@ import Project from '../../src/javascript/objects/project';
 import Todo from '../../src/javascript/objects/todo';
 import { getLatestProjectId } from '../../src/javascript/data/localStorage';
 
-describe('Todo object', () => {
+describe('Project object', () => {
   const firstProject = new Project('title 1', 'project 1 description');
   const latestProjectIdAfterFirstProjectCreated = getLatestProjectId();
   it('should create Project object for the first time with id value 1', () => {
