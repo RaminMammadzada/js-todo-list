@@ -1,6 +1,4 @@
-const addToLocalStorage = () => {
-  localStorage.setItem('name', 'Obaseki Nosa');
-};
+import Organization from '../objects/organization';
 
 const isLocalStorageEmpty = () => {
   // console.log(JSON.parse(localStorage.getItem("organization")))
@@ -26,7 +24,11 @@ const getCurrentProject = () => {
 };
 
 const addNewProject = (newProject) => {
-  const organization = JSON.parse(localStorage.getItem('organization'));
+  let organization = JSON.parse(localStorage.getItem('organization'));
+  if (organization === null) {
+    organization = new Organization('Remki Design Company');
+  }
+
   organization.projects.push(newProject);
   localStorage.setItem('organization', JSON.stringify(organization));
 };
@@ -154,7 +156,6 @@ const setLatestTodoId = (value) => {
 const getLatestTodoId = () => localStorage.getItem('latestTodoId');
 
 export {
-  addToLocalStorage,
   getAllProjects,
   setCurrentProjectId,
   getCurrentProjectId,
