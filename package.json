@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
+    "test-watch": "jest --watch *.js",
     "build": "webpack --config webpack.config.js ",
     "dev": "node_modules/.bin/webpack serve --mode=development --watch --hot"
   },
@@ -49,14 +50,5 @@
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "@fortawesome/fontawesome-free": "^5.15.1"
-  },
-  "jest": {
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "bower_components", "shared"],
-
-    "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    }
   }
 }
