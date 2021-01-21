@@ -16,8 +16,9 @@ The page is made with valinna JS (JS6) and the following milestones are finished
 - [x] Milestone 4 - Add view files and logic for populating todos.
 - [x] Milestone 5 - Add CRUD methods to save to `localStorage`, update, delete and edit objects in `localStorage` . I use factory functions to handle them.
 - [x] Milestone 6 - Update UI.
-- [x] Milestone 6 - Update readme file.
-- [x] Milestone 6 - Update code to obey linter rules.
+- [x] Milestone 7 - Update readme file.
+- [x] Milestone 8 - Update code to obey linter rules.
+- [x] Milestone 9 - Add unit tests for objects, data manipulater methods and for some view files.
 
 ## Built With
 
